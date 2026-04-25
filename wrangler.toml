@@ -1,0 +1,26 @@
+name = "cf-workers-sub"
+main = "_worker.js"
+compatibility_date = "2024-12-01"
+# Custom Domain
+routes = [
+    { pattern = "cf-workers-sub.rtt.icu", custom_domain = true }
+]
+# KV Namespace binding
+[[kv_namespaces]]
+binding = "KV"
+id = "2d8ebb3a45c84d249b1e24f91b5de21d"
+preview_id = "7356d4c9aeba4818bbc5d29e226cebb9"
+
+# Environment variables
+[vars]
+TOKEN = "88888"
+TGTOKEN = ""  # Telegram bot token for notifications
+TGID = ""     # Telegram account ID for receiving notifications
+SUBNAME = ""  # Subscription name
+SUBAPI = "url.v1.mk"  # 这是一个比较稳定的订阅转换后端
+
+
+
+# Cron Trigger
+[triggers]
+crons = ["0 0 * * *"]  # Default to run daily at midnight
